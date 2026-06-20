@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Azzam Muhammad Zakky — Profil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f5f5f5;
+    --bg-elevated:#ffffff;
+    --bg-card:#eeeeee;
+    --ink-primary:#0a0a0a;
+    --ink-secondary:#555555;
+    --ink-muted:#888888;
+    --ink-dim:#aaaaaa;
+    --line:#dddddd;
+    --line-accent:#cccccc;
+    --accent-cyan:#00aa00;
+    --accent-cyan-dim:rgba(0,170,0,0.12);
+    --accent-magenta:#cc0066;
+    --accent-magenta-dim:rgba(204,0,102,0.12);
+    --accent-yellow:#cc9900;
+    --accent-yellow-dim:rgba(204,153,0,0.12);
+    --accent-purple:#663399;
+    --accent-purple-dim:rgba(102,51,153,0.12);
+    --grid-color:rgba(0,0,0,0.03);
+    --font-display:'Inter', sans-serif;
+    --font-mono:'JetBrains Mono', monospace;
+    --font-body:'Space Grotesk', sans-serif;
+  }
+
+  [data-theme="dark"]{
+    --bg:#000000;
+    --bg-elevated:#0a0a0a;
+    --bg-card:#111111;
+    --ink-primary:#ffffff;
+    --ink-secondary:#888888;
+    --ink-muted:#555555;
+    --ink-dim:#333333;
+    --line:#222222;
+    --line-accent:#333333;
+    --accent-cyan:#39ff14;
+    --accent-cyan-dim:rgba(57,255,20,0.15);
+    --accent-magenta:#ff00ff;
+    --accent-magenta-dim:rgba(255,0,255,0.15);
+    --accent-yellow:#ccff00;
+    --accent-yellow-dim:rgba(204,255,0,0.15);
+    --accent-purple:#9d4edd;
+    --accent-purple-dim:rgba(157,78,221,0.15);
+    --grid-color:rgba(255,255,255,0.04);
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth; height:100%;}
+  body{
+    margin:0;
+    height:100%;
+    overflow:hidden;
+    background-color:var(--bg);
+    color:var(--ink-primary);
+    font-family:var(--font-body);
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      linear-gradient(var(--grid-color) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size:40px 40px;
+    background-position:center center;
+  }
+
+  ::selection{background:var(--accent-cyan); color:#000;}
+
+  body::before{
+    content:"";
+    position:fixed; inset:0; pointer-events:none; z-index:100;
+    background-image:
+      linear-gradient(90deg, rgba(57,255,20,0.03) 1px, transparent 1px),
+      linear-gradient(rgba(57,255,20,0.03) 1px, transparent 1px);
+    background-size:120px 120px;
+    background-position:0 0;
+  }
+
+  .scanlines{
+    position:fixed; inset:0; pointer-events:none; z-index:99;
+    background:repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.3) 2px,
+      rgba(0,0,0,0.3) 4px
+    );
+    opacity:0.4;
+  }
+
+  .noise{
+    position:fixed; inset:0; pointer-events:none; z-index:98;
+    opacity:0.03;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+
+  h1,h2,h3,h4{font-family:var(--font-display); margin:0; font-weight:800; text-transform:uppercase; letter-spacing:-0.02em;}
+  p{margin:0;}
+  a{color:inherit; text-decoration:none;}
+  ul{margin:0; padding:0; list-style:none;}
+  .mono{font-family:var(--font-mono);}
+  button{font-family:var(--font-mono); cursor:pointer; border:none; background:none; color:inherit; text-transform:uppercase; font-weight:600; letter-spacing:0.05em;}
+
+  .glitch{
+    position:relative;
+    display:inline-block;
+  }
+  .glitch::before,.glitch::after{
+    content:attr(data-text);
+    position:absolute; top:0; left:0; width:100%; height:100%;
+    background:var(--bg);
+  }
+  .glitch::before{
+    left:2px; text-shadow:-2px 0 var(--accent-magenta);
+    clip:rect(24px, 550px, 90px, 0);
+    animation:glitch-anim-1 3s infinite linear alternate-reverse;
+  }
+  .glitch::after{
+    left:-2px; text-shadow:-2px 0 var(--accent-cyan);
+    clip:rect(85px, 550px, 140px, 0);
+    animation:glitch-anim-2 2.5s infinite linear alternate-reverse;
+  }
+  @keyframes glitch-anim-1{
+    0%{clip:rect(20px,9999px,15px,0);}
+    20%{clip:rect(80px,9999px,90px,0);}
+    40%{clip:rect(10px,9999px,50px,0);}
+    60%{clip:rect(40px,9999px,80px,0);}
+    80%{clip:rect(90px,9999px,100px,0);}
+    100%{clip:rect(30px,9999px,60px,0);}
+  }
+  @keyframes glitch-anim-2{
+    0%{clip:rect(60px,9999px,70px,0);}
+    20%{clip:rect(10px,9999px,20px,0);}
+    40%{clip:rect(90px,9999px,100px,0);}
+    60%{clip:rect(30px,9999px,40px,0);}
+    80%{clip:rect(50px,9999px,60px,0);}
+    100%{clip:rect(70px,9999px,80px,0);}
+  }
+
+  .app{
+    display:flex;
+    height:100vh;
+    position:relative;
+  }
+
+  .sidebar{
+    width:80px;
+    flex-shrink:0;
+    background:var(--bg);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:0;
+    position:sticky;
+    top:0;
+    height:100vh;
+    border-right:1px solid var(--line);
+    z-index:10;
+  }
+  .sidebar-logo{
+    width:100%; height:80px;
+    display:flex; align-items:center; justify-content:center;
+    border-bottom:1px solid var(--line);
+    font-family:var(--font-mono); font-weight:800; font-size:14px;
+    color:var(--accent-cyan);
+    letter-spacing:0.1em;
+    position:relative;
+  }
+  .sidebar-logo::after{
+    content:"_";
+    animation:blink 1s step-end infinite;
+  }
+  @keyframes blink{50%{opacity:0;}}
+
+  .sidebar-status{
+    display:flex; flex-direction:column; gap:4px; 
+    padding:20px 0;
+    align-items:center;
+  }
+  .sidebar-status span{
+    width:4px; height:4px; 
+    background:var(--ink-dim);
+  }
+  .sidebar-status span:nth-child(1){background:var(--accent-yellow); box-shadow:0 0 8px var(--accent-yellow);}
+  .sidebar-status span:nth-child(2){background:var(--accent-cyan); box-shadow:0 0 8px var(--accent-cyan);}
+  .sidebar-status span:nth-child(3){background:var(--accent-magenta); box-shadow:0 0 8px var(--accent-magenta);}
+
+  .sidebar-nav{
+    display:flex; flex-direction:column; gap:0;
+    flex:1;
+    width:100%;
+  }
+  .sidebar-link{
+    width:100%; height:60px;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--ink-muted);
+    border-bottom:1px solid var(--line);
+    position:relative;
+    transition:all 0.15s ease;
+    font-family:var(--font-mono);
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:0.05em;
+    cursor:pointer;
+  }
+  .sidebar-link svg{width:18px; height:18px;}
+  .sidebar-link:hover{ 
+    background:var(--bg-elevated); 
+    color:var(--accent-cyan);
+    border-right:2px solid var(--accent-cyan);
+  }
+  .sidebar-link.active{ 
+    background:var(--accent-cyan-dim); 
+    color:var(--accent-cyan);
+    border-right:2px solid var(--accent-cyan);
+  }
+  .sidebar-link.active::before{
+    content:">";
+    position:absolute; left:8px;
+    color:var(--accent-cyan);
+    font-weight:800;
+  }
+
+  .sidebar-bottom{
+    display:flex; flex-direction:column; 
+    width:100%;
+    border-top:1px solid var(--line);
+  }
+  .theme-toggle{
+    width:100%; height:60px;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--ink-muted);
+    border-bottom:1px solid var(--line);
+    transition:all 0.15s ease;
+    cursor:pointer;
+  }
+  .theme-toggle:hover{
+    background:var(--bg-elevated);
+    color:var(--accent-yellow);
+  }
+  .theme-toggle svg{width:16px; height:16px;}
+
+  .main{
+    flex:1; min-width:0; height:100vh;
+    display:flex; flex-direction:column;
+    overflow:hidden;
+    position:relative; z-index:1;
+  }
+
+  .topbar{
+    display:flex; align-items:center; justify-content:space-between;
+    gap:20px; 
+    padding:16px 24px;
+    border-bottom:1px solid var(--line);
+    background:var(--bg);
+    flex-shrink:0;
+  }
+  .breadcrumb-eyebrow{
+    font-family:var(--font-mono); font-size:9px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase;
+    color:var(--accent-cyan); 
+    display:block; margin-bottom:4px;
+  }
+  .breadcrumb{
+    font-size:11px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase;
+    color:var(--ink-muted);
+    font-family:var(--font-mono);
+  }
+  .breadcrumb b{color:var(--ink-primary); font-weight:700;}
+
+  .topbar-right{
+    display:flex; align-items:center; gap:0;
+  }
+
+  .search-box{
+    display:flex; align-items:center; gap:10px;
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    padding:8px 14px;
+    width:220px;
+    font-family:var(--font-mono);
+    font-size:11px;
+  }
+  .search-box:focus-within{
+    border-color:var(--accent-cyan);
+    box-shadow:0 0 0 1px var(--accent-cyan-dim);
+  }
+  .search-box svg{width:14px; height:14px; color:var(--ink-muted); flex-shrink:0;}
+  .search-box input{
+    border:none; outline:none; background:transparent; width:100%;
+    font-size:11px; color:var(--ink-primary); font-family:var(--font-mono);
+  }
+  .search-box input::placeholder{color:var(--ink-dim);}
+
+  .date-pill{
+    display:flex; align-items:center; gap:8px;
+    background:var(--bg-card); 
+    border:1px solid var(--line);
+    border-left:none;
+    padding:8px 14px;
+    font-size:10px; font-weight:600; color:var(--ink-secondary);
+    font-family:var(--font-mono); 
+    letter-spacing:0.02em;
+  }
+  .date-pill .dot{
+    width:6px; height:6px; 
+    background:var(--accent-yellow); 
+    box-shadow:0 0 6px var(--accent-yellow);
+    animation:blink 2s step-end infinite;
+  }
+
+  .content-grid{
+    display:grid;
+    grid-template-columns:minmax(0,2fr) minmax(300px,1fr);
+    gap:0;
+    align-items:start;
+    flex:1;
+    min-height:0;
+    border-top:1px solid var(--line);
+  }
+  .col-main, .col-side{
+    height:100%;
+    overflow-y:auto;
+    scrollbar-width:thin;
+    scrollbar-color:var(--line) transparent;
+  }
+  .col-main{
+    padding:0;
+    border-right:1px solid var(--line);
+  }
+  .col-side{
+    display:flex; flex-direction:column; gap:0;
+    padding:0;
+  }
+  .col-main::-webkit-scrollbar, .col-side::-webkit-scrollbar{width:4px;}
+  .col-main::-webkit-scrollbar-thumb, .col-side::-webkit-scrollbar-thumb{background:var(--line);}
+
+  .card{
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    border-left:none; border-right:none;
+    position:relative;
+    margin-bottom:-1px;
+  }
+  .card::before{
+    content:"";
+    position:absolute; top:0; left:0;
+    width:3px; height:100%;
+    background:var(--accent-cyan);
+    opacity:0;
+    transition:opacity 0.2s ease;
+  }
+  .card:hover::before{
+    opacity:1;
+  }
+
+  .section-number{
+    font-family:var(--font-mono);
+    font-size:10px;
+    font-weight:700;
+    color:var(--accent-cyan);
+    letter-spacing:0.1em;
+    margin-bottom:8px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .section-number::before{
+    content:"/";
+    color:var(--ink-dim);
+  }
+
+  .hero{
+    position:relative;
+    overflow:hidden;
+    border-bottom:1px solid var(--line);
+    background:var(--bg);
+  }
+  .hero::after{
+    content:"";
+    position:absolute; top:0; right:0;
+    width:40%; height:100%;
+    background:linear-gradient(135deg, transparent 50%, rgba(57,255,20,0.03) 50%);
+    pointer-events:none;
+  }
+  .hero-inner{
+    display:flex; 
+    align-items:stretch; 
+    min-height:420px; 
+    position:relative; 
+    z-index:2;
+  }
+  .hero-text{
+    flex:1 1 100%; min-width:280px;
+    padding:40px 36px;
+    display:flex; flex-direction:column; justify-content:center;
+  }
+
+  .hero-eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--font-mono);
+    font-size:10px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase;
+    background:var(--bg-elevated);
+    border:1px solid var(--line);
+    color:var(--accent-cyan);
+    padding:6px 12px; 
+    margin-bottom:20px;
+    width:fit-content;
+  }
+  .hero-eyebrow .dot{
+    width:5px; height:5px;
+    background:var(--accent-yellow);
+    box-shadow:0 0 6px var(--accent-yellow);
+    animation:blink 2s step-end infinite;
+  }
+
+  .hero h1{
+    font-family:var(--font-display); 
+    font-size:clamp(32px,4.5vw,52px); 
+    font-weight:900; 
+    line-height:0.95; 
+    letter-spacing:-0.03em; 
+    max-width:520px; 
+    color:var(--ink-primary);
+    text-transform:uppercase;
+  }
+  .hero h1 span{ 
+    color:var(--accent-cyan); 
+    text-shadow:0 0 20px rgba(57,255,20,0.3);
+  }
+
+  .hero-caption{
+    margin-top:16px; 
+    max-width:440px; 
+    font-size:13px; 
+    line-height:1.6;
+    color:var(--ink-secondary); 
+    font-weight:400;
+    font-family:var(--font-body);
+  }
+
+  .hero-badges{
+    display:flex; 
+    flex-wrap:wrap; 
+    gap:8px; 
+    margin-top:24px;
+  }
+  .hero-badge{
+    font-size:10px; 
+    font-weight:600;
+    background:var(--bg-elevated);
+    border:1px solid var(--line);
+    color:var(--ink-secondary);
+    padding:6px 12px; 
+    font-family:var(--font-mono); 
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+  }
+  .hero-badge::before{
+    content:">";
+    color:var(--accent-cyan);
+    margin-right:6px;
+    font-weight:800;
+  }
+
+  .hero-actions{
+    display:flex; 
+    gap:0; 
+    margin-top:28px; 
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex; 
+    align-items:center; 
+    gap:8px;
+    padding:12px 20px; 
+    font-size:11px; 
+    font-weight:700; 
+    letter-spacing:0.08em;
+    transition:all 0.15s ease;
+    font-family:var(--font-mono);
+    text-transform:uppercase;
+    border:1px solid var(--line);
+    cursor:pointer;
+    text-decoration:none;
+  }
+  .btn:hover{
+    transform:translate(-2px, -2px);
+    box-shadow:4px 4px 0 var(--accent-cyan);
+  }
+  .btn-primary{
+    background:var(--accent-cyan); 
+    color:var(--bg);
+    border-color:var(--accent-cyan);
+    font-weight:800;
+  }
+  .btn-primary:hover{
+    background:var(--ink-primary);
+    border-color:var(--ink-primary);
+    box-shadow:4px 4px 0 var(--accent-magenta);
+  }
+  .btn-ghost{
+    background:transparent; 
+    color:var(--ink-primary); 
+    border:1px solid var(--line);
+    margin-left:-1px;
+  }
+  .btn-ghost:hover{
+    background:var(--bg-elevated);
+    border-color:var(--accent-cyan);
+    box-shadow:4px 4px 0 var(--accent-cyan);
+  }
+  .btn svg{width:14px;height:14px;}
+
+  .data-readout{
+    position:absolute;
+    bottom:16px; left:36px;
+    font-family:var(--font-mono);
+    font-size:9px;
+    color:var(--ink-muted);
+    letter-spacing:0.05em;
+    display:flex; gap:16px;
+  }
+  .data-readout span{
+    display:flex; align-items:center; gap:4px;
+  }
+  .data-readout span::before{
+    content:"";
+    width:4px; height:4px;
+    background:var(--accent-cyan);
+  }
+
+  .section-head{
+    display:flex; align-items:baseline; justify-content:space-between;
+    margin-bottom:16px; gap:12px;
+    padding:0 36px;
+    padding-top:32px;
+  }
+  .section-kicker{
+    display:block; 
+    font-family:var(--font-mono); 
+    font-size:9px; 
+    font-weight:700;
+    letter-spacing:0.2em; 
+    text-transform:uppercase; 
+    color:var(--accent-cyan); 
+    margin-bottom:6px;
+  }
+  .section-head h2{
+    font-family:var(--font-display); 
+    font-size:20px; 
+    font-weight:900; 
+    text-transform:uppercase; 
+    letter-spacing:-0.02em;
+  }
+  .section-head .sub{
+    font-size:12px; 
+    color:var(--ink-muted); 
+    margin-top:4px; 
+    font-weight:400;
+    font-family:var(--font-mono);
+  }
+
+  section{
+    border-bottom:1px solid var(--line);
+    padding-bottom:32px;
+  }
+  section:last-child{
+    border-bottom:none;
+  }
+
+  .about-card{padding:0 36px 32px;}
+  .about-card p{
+    font-size:13px; 
+    line-height:1.7; 
+    color:var(--ink-secondary); 
+    font-weight:400;
+    max-width:600px;
+  }
+  .about-card p + p{margin-top:12px;}
+
+  .about-tagline{
+    margin-top:20px; 
+    padding:14px 16px;
+    background:var(--bg-elevated);
+    font-size:12px; 
+    color:var(--ink-secondary);
+    border-left:2px solid var(--accent-yellow);
+    font-family:var(--font-mono); 
+    line-height:1.6;
+    letter-spacing:0.02em;
+  }
+  .about-tagline::before{
+    content:"// ";
+    color:var(--accent-yellow);
+    font-weight:700;
+  }
+
+  .hobby-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(180px,1fr));
+    gap:0;
+    padding:0 36px;
+  }
+  .hobby-card{
+    padding:24px 20px;
+    cursor:pointer;
+    transition:all 0.15s ease;
+    border:1px solid var(--line);
+    margin-right:-1px;
+    margin-bottom:-1px;
+    background:var(--bg-card);
+  }
+  .hobby-card:hover{
+    background:var(--bg-elevated);
+    border-color:var(--accent-cyan);
+    z-index:2;
+    position:relative;
+  }
+  .hobby-card:focus-visible{
+    outline:2px solid var(--accent-cyan); 
+    outline-offset:0;
+  }
+  .hobby-card.dim{opacity:0.3;}
+
+  .hobby-icon{
+    width:36px; height:36px;
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:14px;
+    border:1px solid var(--line);
+    background:var(--bg);
+  }
+  .hobby-icon svg{width:16px;height:16px; color:var(--accent-cyan);}
+
+  .hobby-card h3{
+    font-size:12px; 
+    font-weight:700; 
+    line-height:1.3; 
+    text-transform:uppercase; 
+    letter-spacing:0.02em;
+    display:flex; align-items:center; justify-content:space-between; 
+    gap:8px;
+    font-family:var(--font-display);
+  }
+
+  .hobby-toggle{
+    flex-shrink:0; 
+    width:14px; 
+    height:14px; 
+    color:var(--ink-dim);
+    transition:transform 0.2s ease, color 0.2s ease;
+  }
+  .hobby-card:hover .hobby-toggle{color:var(--accent-cyan);}
+  .hobby-card.open .hobby-toggle{
+    transform:rotate(45deg); 
+    color:var(--accent-cyan);
+  }
+
+  .hobby-desc{
+    max-height:0; 
+    opacity:0; 
+    overflow:hidden;
+    transition:max-height 0.3s ease, opacity 0.25s ease, margin-top 0.25s ease;
+  }
+  .hobby-card.open .hobby-desc{
+    max-height:200px; 
+    opacity:1; 
+    margin-top:10px;
+  }
+  .hobby-card p{
+    font-size:11px; 
+    color:var(--ink-muted); 
+    line-height:1.5; 
+    font-weight:400;
+    font-family:var(--font-body);
+  }
+
+  .hobby-status{
+    display:inline-flex; 
+    align-items:center; 
+    gap:6px;
+    margin-top:12px; 
+    font-size:9px; 
+    font-weight:700; 
+    color:var(--accent-yellow);
+    text-transform:uppercase; 
+    letter-spacing:0.1em; 
+    font-family:var(--font-mono);
+  }
+  .hobby-status .dot{
+    width:5px; height:5px;
+    background:var(--accent-yellow);
+    box-shadow:0 0 6px var(--accent-yellow);
+    animation:blink 2s step-end infinite;
+  }
+
+  .progress-card{
+    padding:32px 36px;
+    display:flex; 
+    align-items:center; 
+    gap:32px; 
+    flex-wrap:wrap;
+  }
+  .progress-stat{
+    display:flex; 
+    flex-direction:column; 
+    align-items:flex-start;
+    min-width:120px;
+  }
+  .progress-number{
+    font-family:var(--font-mono); 
+    font-size:48px; 
+    font-weight:800; 
+    color:var(--accent-cyan); 
+    line-height:1; 
+    text-shadow:0 0 20px rgba(57,255,20,0.2);
+    letter-spacing:-0.02em;
+  }
+  .progress-label{
+    margin-top:8px; 
+    font-size:10px; 
+    font-weight:700; 
+    color:var(--ink-muted); 
+    text-transform:uppercase; 
+    letter-spacing:0.1em; 
+    font-family:var(--font-mono);
+  }
+
+  .progress-info{flex:1; min-width:220px;}
+  .progress-desc{
+    font-size:12px; 
+    line-height:1.6; 
+    color:var(--ink-secondary); 
+    font-weight:400;
+  }
+
+  .progress-bar-track{
+    height:6px; 
+    background:var(--bg-elevated); 
+    overflow:hidden; 
+    margin-top:14px; 
+    position:relative;
+    border:1px solid var(--line);
+  }
+  .progress-bar-track::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 8px,
+      var(--line) 8px,
+      var(--line) 9px
+    );
+  }
+  .progress-bar-fill{
+    height:100%; 
+    background:var(--accent-cyan);
+    width:75%; 
+    box-shadow:0 0 12px rgba(57,255,20,0.3);
+    position:relative;
+    z-index:2;
+  }
+  .progress-bar-fill::after{
+    content:"";
+    position:absolute;
+    right:0; top:0; bottom:0;
+    width:2px;
+    background:var(--ink-primary);
+    box-shadow:0 0 8px var(--ink-primary);
+  }
+
+  .progress-meta{
+    display:flex; 
+    justify-content:space-between; 
+    margin-top:8px; 
+    font-size:9px; 
+    font-weight:700; 
+    color:var(--ink-dim); 
+    text-transform:uppercase; 
+    letter-spacing:0.08em; 
+    font-family:var(--font-mono);
+  }
+
+  .side-card{
+    padding:28px 24px;
+    border-bottom:1px solid var(--line);
+  }
+  .side-card:last-child{
+    border-bottom:none;
+  }
+  .side-card h3{
+    font-size:11px; 
+    font-weight:800; 
+    margin-bottom:16px; 
+    display:flex; 
+    align-items:center; 
+    gap:8px; 
+    text-transform:uppercase; 
+    letter-spacing:0.05em;
+    font-family:var(--font-display);
+    color:var(--ink-primary);
+  }
+  .side-card h3 svg{
+    width:14px; height:14px; 
+    color:var(--accent-cyan);
+  }
+
+  .fact-row{
+    display:flex; 
+    align-items:center; 
+    justify-content:space-between;
+    padding:10px 0; 
+    border-bottom:1px solid var(--line);
+    font-size:11px;
+  }
+  .fact-row:last-child{
+    border-bottom:none; 
+    padding-bottom:0;
+  }
+  .fact-row .label{
+    color:var(--ink-muted); 
+    font-weight:600; 
+    font-family:var(--font-mono); 
+    font-size:9px; 
+    text-transform:uppercase; 
+    letter-spacing:0.08em;
+  }
+  .fact-row .value{
+    color:var(--ink-primary); 
+    font-weight:700; 
+    text-align:right;
+    font-family:var(--font-mono);
+    font-size:10px;
+  }
+
+  .focus-item{
+    display:flex; 
+    gap:12px; 
+    align-items:flex-start;
+    padding:10px 0; 
+    border-bottom:1px solid var(--line);
+  }
+  .focus-item:last-child{
+    border-bottom:none; 
+    padding-bottom:0;
+  }
+  .focus-bullet{
+    width:6px; height:6px; 
+    margin-top:5px; 
+    flex-shrink:0;
+    background:var(--accent-cyan);
+    box-shadow:0 0 6px rgba(57,255,20,0.4);
+  }
+  .focus-item p{
+    font-size:11px; 
+    color:var(--ink-secondary); 
+    line-height:1.5; 
+    font-weight:400;
+  }
+  .focus-item .tag{
+    font-size:9px; 
+    font-weight:700; 
+    color:var(--accent-cyan); 
+    text-transform:uppercase; 
+    letter-spacing:0.08em; 
+    display:block; 
+    margin-bottom:2px; 
+    font-family:var(--font-mono);
+  }
+
+  .connect-list{
+    display:flex; 
+    flex-direction:column; 
+    gap:0;
+  }
+  .connect-item{
+    display:flex; 
+    align-items:center; 
+    gap:12px;
+    padding:12px 0;
+    border-bottom:1px solid var(--line);
+    transition:all 0.15s ease;
+    text-decoration:none;
+  }
+  .connect-item:last-child{
+    border-bottom:none;
+  }
+  .connect-item:hover{
+    padding-left:8px;
+    background:var(--accent-cyan-dim);
+    margin:0 -24px;
+    padding-left:32px;
+    padding-right:24px;
+  }
+  .connect-item:hover .connect-icon{
+    color:var(--accent-cyan);
+  }
+  .connect-icon{
+    width:32px; height:32px;
+    display:flex; align-items:center; justify-content:center;
+    border:1px solid var(--line);
+    background:var(--bg);
+    flex-shrink:0;
+    color:var(--ink-muted);
+    transition:color 0.15s ease;
+  }
+  .connect-icon svg{width:14px; height:14px;}
+  .connect-item span{
+    font-size:11px; 
+    font-weight:600; 
+    color:var(--ink-secondary);
+    font-family:var(--font-mono);
+    letter-spacing:0.02em;
+  }
+  .connect-item:hover span{
+    color:var(--ink-primary);
+  }
+
+  .deco-line{
+    height:1px;
+    background:linear-gradient(90deg, var(--accent-cyan), transparent);
+    margin:0 36px;
+    opacity:0.5;
+  }
+
+  .status-bar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:8px 24px;
+    border-top:1px solid var(--line);
+    background:var(--bg);
+    font-family:var(--font-mono);
+    font-size:9px;
+    color:var(--ink-muted);
+    letter-spacing:0.05em;
+    flex-shrink:0;
+  }
+  .status-bar-left, .status-bar-right{
+    display:flex;
+    gap:16px;
+    align-items:center;
+  }
+  .status-indicator{
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .status-indicator::before{
+    content:"";
+    width:6px; height:6px;
+    background:var(--accent-cyan);
+    box-shadow:0 0 6px var(--accent-cyan);
+  }
+  .status-indicator.warning::before{
+    background:var(--accent-yellow);
+    box-shadow:0 0 6px var(--accent-yellow);
+  }
+
+  ::-webkit-scrollbar{width:4px;}
+  ::-webkit-scrollbar-track{background:transparent;}
+  ::-webkit-scrollbar-thumb{background:var(--line); border-radius:0;}
+  ::-webkit-scrollbar-thumb:hover{background:var(--ink-dim);}
+
+  @media (max-width:900px){
+    .content-grid{
+      grid-template-columns:1fr;
+    }
+    .col-main{
+      border-right:none;
+    }
+    .hero-inner{
+      flex-direction:column;
+    }
+    .sidebar{
+      width:60px;
+    }
+    .sidebar-link{
+      font-size:0;
+    }
+    .hero h1{
+      font-size:28px;
+    }
+  }
+
+  .cursor-blink::after{
+    content:"_";
+    animation:blink 1s step-end infinite;
+    color:var(--accent-cyan);
+  }
+
+  .data-grid{
+    position:absolute;
+    top:20px; right:20px;
+    font-family:var(--font-mono);
+    font-size:9px;
+    color:var(--ink-dim);
+    text-align:right;
+    line-height:1.8;
+    pointer-events:none;
+  }
+
+  .toast{
+    position:fixed;
+    bottom:80px;
+    right:24px;
+    background:var(--bg-card);
+    border:1px solid var(--accent-cyan);
+    padding:12px 20px;
+    font-family:var(--font-mono);
+    font-size:11px;
+    color:var(--accent-cyan);
+    z-index:1000;
+    transform:translateY(100px);
+    opacity:0;
+    transition:all 0.3s ease;
+    box-shadow:0 0 20px rgba(57,255,20,0.2);
+  }
+  .toast.show{
+    transform:translateY(0);
+    opacity:1;
+  }
+  .toast::before{
+    content:"> ";
+    color:var(--accent-yellow);
+  }
+</style>
+</head>
+<body>
+
+<div class="scanlines"></div>
+<div class="noise"></div>
+
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="sidebar-logo">CYBR</div>
+    <div class="sidebar-status">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#profil" class="sidebar-link active" onclick="scrollToSection('profil'); return false;" aria-label="Profil">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+      </a>
+      <a href="#hobi" class="sidebar-link" onclick="scrollToSection('hobi'); return false;" aria-label="Hobi">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+      </a>
+      <a href="#kuliah" class="sidebar-link" onclick="scrollToSection('kuliah'); return false;" aria-label="Kuliah">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+      </a>
+      <a href="#kontak" class="sidebar-link" onclick="scrollToSection('kontak'); return false;" aria-label="Kontak">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+      </a>
+    </nav>
+    <div class="sidebar-bottom">
+      <button class="theme-toggle" aria-label="Toggle tema" onclick="toggleTheme()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      </button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <span class="breadcrumb-eyebrow">SISTEM_PROFIL_v2.4</span>
+        <div class="breadcrumb">
+          <b>ROOT</b> / <b>PROFIL</b> / AZZAM_M_ZAKKY
+        </div>
+      </div>
+      <div class="topbar-right">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" placeholder="Cari data..." onkeyup="handleSearch(this.value)" />
+        </div>
+        <div class="date-pill">
+          <span class="dot"></span>
+          <span id="clock">--:--:--</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="content-grid">
+      <div class="col-main">
+
+        <section class="hero" id="profil">
+          <div class="hero-inner">
+            <div class="hero-text">
+              <div class="hero-eyebrow">
+                <span class="dot"></span>
+                STATUS: MAHASISWA AKTIF
+              </div>
+              <h1 class="glitch" data-text="AZZAM MUHAMMAD ZAKKY">
+                AZZAM <span>MUHAMMAD</span> ZAKKY
+              </h1>
+              <p class="hero-caption">
+                Perkenalkan, saya Azzam Muhammad Zakky — Mahasiswa program studi Hukum Ekonomi Syariah 
+                di Universitas Islam Negeri Sultan Maulana Hasanuddin Banten, dengan minat lintas bidang 
+                pada kecerdasan buatan, pasar modal, desain visual, dan produksi konten digital.
+              </p>
+              <div class="hero-badges">
+                <span class="hero-badge">HUKUM EKONOMI SYARIAH</span>
+                <span class="hero-badge">UIN SMH BANTEN</span>
+                <span class="hero-badge">MINAT LINTAS BIDANG</span>
+              </div>
+              <div class="hero-actions">
+                <a href="#hobi" class="btn btn-primary" onclick="scrollToSection('hobi'); return false;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                  LIHAT HOBI
+                </a>
+                <a href="#kontak" class="btn btn-ghost" onclick="scrollToSection('kontak'); return false;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  HUBUNGI SAYA
+                </a>
+              </div>
+              <div class="data-readout">
+                <span>ID: 8821-AX-77</span>
+                <span>LVL: 21</span>
+                <span>EXP: 75%</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="tentang">
+          <div class="section-head">
+            <div>
+              <span class="section-kicker">01 / BIO_DATA</span>
+              <h2>TENTANG SAYA</h2>
+            </div>
+          </div>
+          <div class="about-card">
+            <p>
+              Nama saya Azzam Muhammad Zakky, saat ini sedang menempuh pendidikan di jurusan Hukum Ekonomi Syariah, 
+              Universitas Islam Negeri Sultan Maulana Hasanuddin Banten. Di luar bangku kuliah, saya senang mencoba 
+              banyak hal baru — mulai dari teknologi AI, dunia investasi, desain visual, sampai konten kreatif.
+            </p>
+            <p>
+              Bagi saya, kuliah hukum ekonomi syariah dan eksplorasi di bidang lain bukan dua jalur yang terpisah, 
+              justru saling melengkapi: cara berpikir analitis dari hukum, dipadukan dengan rasa ingin tahu terhadap 
+              teknologi dan kreativitas digital.
+            </p>
+            <div class="about-tagline">
+              "Selalu ada hal baru buat dipelajari — kadang lewat buku hukum, kadang lewat layar chart saham, kadang lewat kanvas desain."
+            </div>
+          </div>
+        </section>
+
+        <div class="deco-line"></div>
+
+        <section id="hobi">
+          <div class="section-head">
+            <div>
+              <span class="section-kicker">02 / INTERESTS</span>
+              <h2>HOBI & MINAT</h2>
+            </div>
+            <span class="section-number">06 ITEMS</span>
+          </div>
+          <div class="hobby-grid">
+            <div class="hobby-card" onclick="toggleHobby(this)">
+              <div class="hobby-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              </div>
+              <h3>
+                AI PROMPT ENGINEER
+                <svg class="hobby-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </h3>
+              <div class="hobby-desc">
+                <p>Eksperimen prompt di Claude, Gemini, ChatGPT, dan Stitch — cari cara terbaik bikin AI "ngerti maksud".</p>
+                <div class="hobby-status">
+                  <span class="dot"></span>
+                  AKTIF
+                </div>
+              </div>
+            </div>
+
+            <div class="hobby-card" onclick="toggleHobby(this)">
+              <div class="hobby-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+              </div>
+              <h3>
+                STOCK MARKET
+                <svg class="hobby-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </h3>
+              <div class="hobby-desc">
+                <p>Mantengin pergerakan saham, belajar baca chart, dan dikit-dikit paham analisis pasar.</p>
+                <div class="hobby-status">
+                  <span class="dot"></span>
+                  AKTIF
+                </div>
+              </div>
+            </div>
+
+            <div class="hobby-card" onclick="toggleHobby(this)">
+              <div class="hobby-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+              </div>
+              <h3>
+                CANVA DESIGN
+                <svg class="hobby-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </h3>
+              <div class="hobby-desc">
+                <p>Bikin desain visual buat konten sosial media sampai keperluan sehari-hari.</p>
+                <div class="hobby-status">
+                  <span class="dot"></span>
+                  AKTIF
+                </div>
+              </div>
+            </div>
+
+            <div class="hobby-card" onclick="toggleHobby(this)">
+              <div class="hobby-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+              </div>
+              <h3>
+                TIKTOK CONTENT
+                <svg class="hobby-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </h3>
+              <div class="hobby-desc">
+                <p>Coba-coba bikin konten ringan di TikTok, masih amatir dan terus belajar gaya sendiri.</p>
+                <div class="hobby-status">
+                  <span class="dot"></span>
+                  AKTIF
+                </div>
+              </div>
+            </div>
+
+            <div class="hobby-card" onclick="toggleHobby(this)">
+              <div class="hobby-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+              </div>
+              <h3>
+                ACCURATE ACCOUNTING
+                <svg class="hobby-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </h3>
+              <div class="hobby-desc">
+                <p>Belajar pencatatan dan pengelolaan keuangan menggunakan software Accurate.</p>
+                <div class="hobby-status">
+                  <span class="dot"></span>
+                  AKTIF
+                </div>
+              </div>
+            </div>
+            <div class="hobby-card" onclick="toggleHobby(this)">
+              <div class="hobby-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </div>
+              <h3>
+                VIBE CODING
+                <svg class="hobby-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </h3>
+              <div class="hobby-desc">
+                <p>Belajar coding lewat AI assistant — Claude, Kimi AI, Google Stitch, GitHub Copilot, dan deploy ke Vercel. Tanpa harus hafal syntax, fokus ke ide dan logika.</p>
+                <div class="hobby-status">
+                  <span class="dot"></span>
+                  AKTIF
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="deco-line"></div>
+
+        <section id="kuliah">
+          <div class="section-head">
+            <div>
+              <span class="section-kicker">03 / ACADEMIC_TRACK</span>
+              <h2>PROGRES KULIAH</h2>
+            </div>
+          </div>
+          <div class="progress-card">
+            <div class="progress-stat">
+              <div class="progress-number">75%</div>
+              <div class="progress-label">SEMESTER 6 DARI 8</div>
+            </div>
+            <div class="progress-info">
+              <p class="progress-desc">
+                Saat ini telah memasuki semester 6 pada program studi Hukum Ekonomi Syariah, 
+                Universitas Islam Negeri Sultan Maulana Hasanuddin Banten. 
+                Terus berprogres menuju kelulusan dengan konsistensi akademik.
+              </p>
+              <div class="progress-bar-track">
+                <div class="progress-bar-fill"></div>
+              </div>
+              <div class="progress-meta">
+                <span>SEMESTER 1</span>
+                <span>SEMESTER 8</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="col-side">
+
+        <div class="side-card">
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            PROFIL SINGKAT
+          </h3>
+          <div class="fact-row">
+            <span class="label">NAMA</span>
+            <span class="value">Azzam Muhammad Zakky</span>
+          </div>
+          <div class="fact-row">
+            <span class="label">JURUSAN</span>
+            <span class="value">Hukum Ekonomi Syariah</span>
+          </div>
+          <div class="fact-row">
+            <span class="label">KAMPUS</span>
+            <span class="value">UIN Sultan Maulana Hasanuddin Banten</span>
+          </div>
+          <div class="fact-row">
+            <span class="label">STATUS</span>
+            <span class="value" style="color:var(--accent-cyan);">Mahasiswa Aktif</span>
+          </div>
+        </div>
+
+        <div class="side-card">
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            FOKUS SAAT INI
+          </h3>
+          <div class="focus-item">
+            <div class="focus-bullet"></div>
+            <div>
+              <span class="tag">AI</span>
+              <p>Melakukan eksplorasi rekayasa prompt (prompt engineering) pada berbagai model kecerdasan buatan.</p>
+            </div>
+          </div>
+          <div class="focus-item">
+            <div class="focus-bullet"></div>
+            <div>
+              <span class="tag">SAHAM</span>
+              <p>Mengamati pergerakan pasar modal serta mempelajari dasar-dasar analisis saham.</p>
+            </div>
+          </div>
+          <div class="focus-item">
+            <div class="focus-bullet"></div>
+            <div>
+              <span class="tag">KONTEN</span>
+              <p>Mengembangkan kemampuan produksi konten secara konsisten pada platform TikTok.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="side-card" id="kontak">
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            MARI TERHUBUNG
+          </h3>
+          <div class="connect-list">
+            <a href="https://instagram.com/ajam.emjed" target="_blank" rel="noopener" class="connect-item" onclick="showToast('Membuka Instagram...')">
+              <div class="connect-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </div>
+              <span>@ajam.emjed</span>
+            </a>
+            <a href="https://linkedin.com/in/azzam-muhammad-zakky" target="_blank" rel="noopener" class="connect-item" onclick="showToast('Membuka LinkedIn...')">
+              <div class="connect-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </div>
+              <span>Azzam Muhammad Zakky</span>
+            </a>
+            <a href="https://tiktok.com/@harumi.desu" target="_blank" rel="noopener" class="connect-item" onclick="showToast('Membuka TikTok...')">
+              <div class="connect-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+              </div>
+              <span>@harumi.desu</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="status-bar">
+      <div class="status-bar-left">
+        <span class="status-indicator">ALL_SYSTEMS_OPERATIONAL</span>
+        <span>MEM: 8.6 GB / 16 GB</span>
+        <span>UPTIME: 70d 14h 22m</span>
+      </div>
+      <div class="status-bar-right">
+        <span style="color:var(--accent-yellow);">CONNECTION_SECURE</span>
+        <span>SCN: 0007</span>
+        <span>NODE: CYBR_01</span>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  function updateClock() {
+    const now = new Date();
+    const time = now.toLocaleTimeString('id-ID', { hour12: false });
+    const date = now.toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' });
+    document.getElementById('clock').textContent = date + ' ' + time;
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+
+  function toggleTheme() {
+    const html = document.documentElement;
+    const current = html.getAttribute('data-theme') || 'light';
+    const newTheme = current === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    showToast('THEME: ' + newTheme.toUpperCase() + '_MODE');
+  }
+
+  function initTheme() {
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = saved || (prefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  }
+  initTheme();
+
+  function toggleHobby(card) {
+    const all = document.querySelectorAll('.hobby-card');
+    const isOpen = card.classList.contains('open');
+
+    all.forEach(c => {
+      c.classList.remove('open');
+      c.classList.add('dim');
+    });
+
+    if (!isOpen) {
+      card.classList.add('open');
+      card.classList.remove('dim');
+    } else {
+      all.forEach(c => c.classList.remove('dim'));
+    }
+  }
+
+  function scrollToSection(id) {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+      const navLink = document.querySelector('.sidebar-link[href="#' + id + '"]');
+      if (navLink) navLink.classList.add('active');
+    }
+    return false;
+  }
+
+  function handleSearch(query) {
+    if (!query) return;
+    query = query.toLowerCase();
+    const sections = document.querySelectorAll('section, .side-card');
+    let found = false;
+    sections.forEach(section => {
+      if (section.textContent.toLowerCase().includes(query)) {
+        if (!found) {
+          section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          found = true;
+        }
+      }
+    });
+    if (found) {
+      showToast('SEARCH: MATCH_FOUND');
+    } else if (query.length > 2) {
+      showToast('SEARCH: NO_MATCH');
+    }
+  }
+
+  function showToast(message) {
+    const toast = document.getElementById('toast');
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 3000);
+  }
+
+  window.addEventListener('scroll', () => {
+    const sections = ['profil', 'tentang', 'hobi', 'kuliah', 'kontak'];
+    let current = '';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= 100) current = id;
+      }
+    });
+    if (current) {
+      document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+      const link = document.querySelector('.sidebar-link[href="#' + current + '"]');
+      if (link) link.classList.add('active');
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const firstHobby = document.querySelector('.hobby-card');
+    if (firstHobby) toggleHobby(firstHobby);
+  });
+</script>
+
+</body>
+</html>
